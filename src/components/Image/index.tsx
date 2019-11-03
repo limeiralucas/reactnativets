@@ -2,19 +2,26 @@ import React from 'react';
 import FastImage from 'react-native-fast-image';
 import {TouchableWithoutFeedback} from 'react-native';
 
-interface CircleImageProps {
+interface ImageProps {
   src: string;
   size: number;
+  circular?: boolean;
   onPress?: () => void;
 }
 
-const CircleImage: React.FC<CircleImageProps> = ({src, size, onPress}) => (
+const Image: React.FC<ImageProps> = ({src, size, circular, onPress}) => (
   <TouchableWithoutFeedback onPress={onPress}>
     <FastImage
       source={{uri: src}}
-      style={[{width: size, height: size, borderRadius: size / 2}]}
+      style={[
+        {width: size, height: size, borderRadius: circular ? size / 2 : 0},
+      ]}
     />
   </TouchableWithoutFeedback>
 );
 
-export default CircleImage;
+Image.defaultProps = {
+  circular: false,
+};
+
+export default Image;
