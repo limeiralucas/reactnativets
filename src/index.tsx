@@ -1,15 +1,8 @@
 import React from 'react';
-import Image from './components/Image';
+import Button from './components/Button';
 
 const App: React.FC = () => {
-  return (
-    <Image
-      src="https://placekitten.com/400/400"
-      size={100}
-      onPress={() => console.warn('test')}
-      circular
-    />
-  );
+  return <Button text="Go to cart" styles={[{marginTop: 20}]} outline />;
 };
 
 export default App;
