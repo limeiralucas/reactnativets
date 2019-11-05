@@ -9,5 +9,5 @@ module.exports = {
     tsconfigRootDir: '.',
   },
   extends: ['@react-native-community', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['plugin:@typescript-eslint/recommended'],
+  plugins: ['@typescript-eslint'],
 };
