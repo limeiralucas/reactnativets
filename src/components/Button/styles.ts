@@ -1,5 +1,5 @@
 import { ViewStyle, TextStyle } from 'react-native';
-import * as colors from '../../constants/colors';
+import * as colors from 'constants/colors';
 
 export const base: ViewStyle = {
   paddingVertical: 10,
