@@ -1,4 +1,4 @@
-import {ViewStyle, TextStyle} from 'react-native';
+import { ViewStyle, TextStyle } from 'react-native';
 import * as colors from '../../constants/colors';
 
 export const base: ViewStyle = {
@@ -10,7 +10,7 @@ export const base: ViewStyle = {
   borderRadius: 5,
   backgroundColor: colors.blue,
   shadowColor: colors.black,
-  shadowOffset: {width: 10, height: 10},
+  shadowOffset: { width: 10, height: 10 },
   shadowOpacity: 0.8,
   shadowRadius: 2,
   elevation: 1,
