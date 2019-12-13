@@ -9,6 +9,7 @@ interface ButtonProps {
   type?: buttonType;
   styles?: Array<object>;
   textStyle?: Array<object>;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   outline = false,
   styles = [],
   textStyle = [],
+  onClick,
 }) => {
   const viewBase = getViewBaseStyle(type, outline);
   const textBase = getTextBaseStyle(type, outline);
@@ -25,11 +27,11 @@ const Button: React.FC<ButtonProps> = ({
   const customTextStyle = StyleSheet.create([textBase, ...textStyle]);
 
   return (
-    <View style={customStyle}>
-      <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={onClick}>
+      <View style={customStyle}>
         <Text style={customTextStyle}>{text}</Text>
-      </TouchableWithoutFeedback>
-    </View>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
