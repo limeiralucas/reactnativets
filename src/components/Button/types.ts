@@ -1,1 +1,1 @@
-export type buttonType = 'default' | 'green';
+export type buttonType = 'default' | 'green' | undefined;

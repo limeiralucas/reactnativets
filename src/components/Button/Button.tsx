@@ -11,7 +11,13 @@ interface ButtonProps {
   textStyle?: Array<object>;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, type, outline, styles, textStyle }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  type,
+  outline = false,
+  styles = [],
+  textStyle = [],
+}) => {
   const viewBase = getViewBaseStyle(type, outline);
   const textBase = getTextBaseStyle(type, outline);
 
@@ -25,13 +31,6 @@ const Button: React.FC<ButtonProps> = ({ text, type, outline, styles, textStyle 
       </TouchableWithoutFeedback>
     </View>
   );
-};
-
-Button.defaultProps = {
-  styles: [],
-  outline: false,
-  type: 'default',
-  textStyle: [],
 };
 
 export default Button;
