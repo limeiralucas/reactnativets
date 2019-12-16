@@ -4,10 +4,7 @@ import Button from '../src/components/Button';
 import { getViewBaseStyle } from '../src/components/Button/helpers';
 
 describe('rendering', () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(<Button text="Submit" />);
-  });
+  const wrapper = shallow(<Button text="Submit" />);
 
   it('should render a <TouchableWithoutFeedback />', () => {
     expect(wrapper.find('TouchableWithoutFeedback')).toHaveLength(1);
@@ -26,12 +23,8 @@ describe('rendering', () => {
 });
 
 describe('interaction', () => {
-  let wrapper;
   const fn = jest.fn();
-
-  beforeEach(() => {
-    wrapper = shallow(<Button text="Submit" onClick={fn} />);
-  });
+  const wrapper = shallow(<Button text="Submit" onClick={fn} />);
 
   it('should call onClick callback', () => {
     wrapper.simulate('press');

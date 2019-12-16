@@ -40,8 +40,14 @@
   },
   "jest": {
     "preset": "react-native",
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}?(x)"
+    ],
+    "testMatch": [
+      "<rootDir>/__tests__/**/?(*.)(spec|test).js?(x)"
+    ],
     "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.js"
+      "<rootDir>/__tests__/setup.js"
     ]
   }
 }
