@@ -4,15 +4,11 @@
 
 import { Navigation } from 'react-native-navigation';
 import App from './src';
+import { goToHome } from 'navigation';
+import { registerScreens } from 'screens';
 
-Navigation.registerComponent('navigation.playground.WelcomeScreen', () => App);
+registerScreens();
 
 Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      component: {
-        name: 'navigation.playground.WelcomeScreen',
-      },
-    },
-  });
+  goToHome();
 });
