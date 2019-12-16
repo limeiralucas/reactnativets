@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from './Button';
-import { getViewBaseStyle } from './helpers';
+import Button from '../src/components/Button';
+import { getViewBaseStyle } from '../src/components/Button/helpers';
 
 describe('rendering', () => {
   let wrapper;
